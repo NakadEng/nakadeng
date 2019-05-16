@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>about</title>
+      <title>このページについて</title>
       <link>https://nakadeng.github.io/nakadeng/pages/about/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://nakadeng.github.io/nakadeng/pages/about/</guid>
       <description>このページについて Nakad@NakadEngineerのTechメモとして記録しています。
-About Nakad  FullName : Daisuke Nakata Origin : Tsubata,Ishikawa,Japan Current Residence : Funabashi,Chiba Age : 25 Skills :  OS :  WindowsServer 2012R2 / 2016 Amazon Linux2 Ubuntu 14.04-18.0x CentOS 6&amp;frasl;7 VMWare ESXi  Networking :  Cisco/Yamaha L2/L3 Routing and Switching  AWS :  EC2/VPC/S3/IAM/Cloudformation/DynamoDB/SSM/Cloudwatch  Shell :  Windows Powershell v3.0-5.0 bash WSLBash  Unit Test :  Pester  Tools : Editor : Visual Studio Code Terminal : Rlogin Others : Virtual Desktop Infrastructure (Citrix Xen Desktop) Active Directory Azure Active Directory Microsoft Intune (MDM) System Center Virtual Machine Manager vCenter Microsoft Hyper-V  License :  LinuC Lv2(LPIC Lv2) AWS Solution Architect Associate 基本情報技術者 Oracle Java Bronze CCENT (expired&amp;hellip;)  Now learning or Skills I acquire  Terraform for AWS (AWSリソースはﾁｮｯﾄ書ける) Vue.</description>
+About Nakad  FullName : Daisuke Nakata Origin : Tsubata,Ishikawa,Japan Current Residence : Funabashi,Chiba Age : 25 Skills :  OS :  WindowsServer 2012R2 / 2016 Amazon Linux2 Ubuntu 14.04-18.0x CentOS 6&amp;frasl;7 VMWare ESXi  Networking :  Cisco/YAMAHA L2/L3 Internal Routing and Switching  AWS :  EC2/VPC/S3/IAM/Cloudformation/DynamoDB/SSM/Cloudwatch/etc&amp;hellip;  Shell :  Windows Powershell v3.0-5.0 bash WSLBash  Unit Test :  Pester  Others :  Virtual Desktop Infrastructure (Citrix Xen Desktop) Active Directory Azure Active Directory Microsoft Intune (MDM) System Center Virtual Machine Manager vCenter Microsoft Hyper-V   DevTools :  Editor : Visual Studio Code Terminal : Rlogin  License :  LinuC Lv2(LPIC Lv2) AWS Solution Architect Associate 基本情報技術者 Oracle Java Bronze CCENT (expired&amp;hellip;)  Now learning or Skills I acquire  Terraform for AWS (AWSリソースはﾁｮｯﾄ書ける) Vue.</description>
     </item>
     
   </channel>
