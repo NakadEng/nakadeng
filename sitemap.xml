@@ -3,12 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nakadeng.github.io/nakadeng/created-a-new-blog/</loc>
+    <loc>https://nakadeng.github.io/nakadeng/</loc>
     <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nakadeng.github.io/nakadeng/</loc>
+    <loc>https://nakadeng.github.io/nakadeng/pages/</loc>
     <lastmod>2019-05-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -20,8 +21,30 @@
   </url>
   
   <url>
-    <loc>https://nakadeng.github.io/nakadeng/tags/blog/</loc>
+    <loc>https://nakadeng.github.io/nakadeng/tags/about/</loc>
     <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/pages/about/</loc>
+    <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/posts/2019-05-15/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/posts/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/tags/blog/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

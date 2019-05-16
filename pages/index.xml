@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nakad Blog</title>
-    <link>https://nakadeng.github.io/nakadeng/</link>
-    <description>Recent content on Nakad Blog</description>
+    <title>Pages on Nakad Blog</title>
+    <link>https://nakadeng.github.io/nakadeng/pages/</link>
+    <description>Recent content in Pages on Nakad Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://nakadeng.github.io/nakadeng/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nakadeng.github.io/nakadeng/pages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://nakadeng.github.io/nakadeng/pages/about/</guid>
       <description>このページについて Nakad@NakadEngineerのTechメモとして記録しています。
 About Nakad  FullName : Daisuke Nakata Origin : Tsubata,Ishikawa,Japan Current Residence : Funabashi,Chiba Age : 25 Skills :  OS :  WindowsServer 2012R2 / 2016 Amazon Linux2 Ubuntu 14.04-18.0x CentOS 6&amp;frasl;7 VMWare ESXi  Networking :  Cisco/Yamaha L2/L3 Routing and Switching  AWS :  EC2/VPC/S3/IAM/Cloudformation/DynamoDB/SSM/Cloudwatch  Shell :  Windows Powershell v3.0-5.0 bash WSLBash  Unit Test :  Pester  Tools : Editor : Visual Studio Code Terminal : Rlogin Others : Virtual Desktop Infrastructure (Citrix Xen Desktop) Active Directory Azure Active Directory Microsoft Intune (MDM) System Center Virtual Machine Manager vCenter Microsoft Hyper-V  License :  LinuC Lv2(LPIC Lv2) AWS Solution Architect Associate 基本情報技術者 Oracle Java Bronze CCENT (expired&amp;hellip;)  Now learning or Skills I acquire  Terraform for AWS (AWSリソースはﾁｮｯﾄ書ける) Vue.</description>
-    </item>
-    
-    <item>
-      <title>Created a New Blog</title>
-      <link>https://nakadeng.github.io/nakadeng/posts/2019-05-15/</link>
-      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://nakadeng.github.io/nakadeng/posts/2019-05-15/</guid>
-      <description> Introduction Static Site GeneratorでMarkdownで書けるBlogを作った  Client  Ubuntu:Windows Subsystem for Linux(Windows10)  Static Site Generator  Hugo v0.56.0/go1.11   </description>
     </item>
     
   </channel>
