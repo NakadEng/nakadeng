@@ -6,10 +6,22 @@
     <description>Recent content on Nakad Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 15:45:34 +0900</lastBuildDate>
     
 	<atom:link href="https://nakadeng.github.io/nakadeng/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Powershell製Webフレームワーク「Polaris」を試した (前編)</title>
+      <link>https://nakadeng.github.io/nakadeng/posts/2019-05-31/</link>
+      <pubDate>Fri, 31 May 2019 15:45:34 +0900</pubDate>
+      
+      <guid>https://nakadeng.github.io/nakadeng/posts/2019-05-31/</guid>
+      <description>僕が一番書き慣れているのがPowershellなので試してみたかった 参考資料 Github https://github.com/PowerShell/Polaris
+Qiita Article (SUGOI WAKARIYASUI!!) https://qiita.com/nimzo6689/items/502262bd5eb1bc8ea4a1
+試した軌跡 環境 -&amp;gt; Polaris on Amazon Linux2 Amazon Linux2 に Powershellをインストールしてその上でPolarisを実行します。
+ Infra  AWS EC2  OS  Amazon Linux2   Command # install powershell $ curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo $ sudo yum install -y powershell # start powershell $ pwsh # show powershell version PS /home/ec2-user&amp;gt; $PSVersionTable Name Value ---- ----- PSVersion 6.2.1 PSEdition Core GitCommitId 6.</description>
+    </item>
     
     <item>
       <title>このページについて</title>
