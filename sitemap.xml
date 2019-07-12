@@ -3,14 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nakadeng.github.io/nakadeng/tags/container/</loc>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/tags/docker/</loc>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/tags/kubernetes/</loc>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/posts/2019-07-12-kubernetesnote/</loc>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nakadeng.github.io/nakadeng/</loc>
-    <lastmod>2019-05-31T15:45:34+09:00</lastmod>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nakadeng.github.io/nakadeng/posts/</loc>
-    <lastmod>2019-05-31T15:45:34+09:00</lastmod>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nakadeng.github.io/nakadeng/tags/</loc>
+    <lastmod>2019-07-12T11:22:35+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -23,12 +52,6 @@
   <url>
     <loc>https://nakadeng.github.io/nakadeng/posts/2019-05-31/</loc>
     <lastmod>2019-05-31T15:45:34+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nakadeng.github.io/nakadeng/tags/</loc>
-    <lastmod>2019-05-31T15:45:34+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
