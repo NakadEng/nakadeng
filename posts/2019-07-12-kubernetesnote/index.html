@@ -80,7 +80,7 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
+          2 min read
         </div><div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
   <title>tag</title>
@@ -180,9 +180,9 @@ Kubernetesクラスタのコンポーネントやアドオンがデプロイさ�
 
 <li><p>Role</p></li>
 
-<li><p>ClusterRole</p></li>
+<li><p>Cluster Role</p></li>
 
-<li><p>RoleBinding</p></li>
+<li><p>Role Binding</p></li>
 
 <li><p>ClusterRoleBinding</p></li>
 
@@ -208,6 +208,24 @@ Kubernetesクラスタのコンポーネントやアドオンがデプロイさ�
 
 <p>kubectl-to-Kubernetes Master の接続に必要な認証情報を載せる</p>
 
+<ul>
+<li>clusters<br /></li>
+</ul>
+
+<p>接続先クラスタ情報</p>
+
+<ul>
+<li>users<br /></li>
+</ul>
+
+<p>認証情報 (X.509/Token/Password/Webhook ,etc..)</p>
+
+<ul>
+<li>contexts<br /></li>
+</ul>
+
+<p>define =&gt; cluster + user + namespace</p>
+
 <h4 id="example-kubeconfig">example (kubeconfig)</h4>
 
 <pre><code class="language-yaml">apiVersion: v1
@@ -231,7 +249,95 @@ contexts: # 接続先と認証情報の組み合わせ
 current-context: sample-context
 </code></pre>
 
+<h4 id="kubeconfigを使わないでkubectlで定義するとき">kubeconfigを使わないでkubectlで定義するとき</h4>
+
+<pre><code class="language-bash"># Cluster
+$ kubectl config set-cluster prd-cluster --server=https://localhost:6443
+
+# Credentials
+$ kubectl config set-credentials admin-user --client-certificate=./sample.crt --client-key=./sample.key --embed-certs=true
+
+# Context (Cluster+Credential+Namespace)
+$ kubectl config set-context prd-admin --cluster=prd-cluster --user=admin-user --namespace=default
+
+# Context Switch
+$ kubectl config use-context prd-admin
+
+# Show current context
+$ kubectl config current-context
+
+# kubectl with context
+$ kubectl --context pre-admin get pod
+</code></pre>
+
 <h3 id="prior-knowledge-kubectx-kubens">[Prior knowledge] kubectx / kubens</h3>
+
+<p>Contextの切り替えを楽にするコマンド</p>
+
+<pre><code class="language-bash"># Switch Contect = &quot;kubectl config use-context pre-admin&quot;
+$ kubectx pre-admin
+
+# Switch Namespace = &quot;kubectl config set-context pre-admin --namespace=kube-system&quot;
+$ kubens kube-system
+</code></pre>
+
+<h2 id="command集">Command集</h2>
+
+<h4 id="適宜-よく使いそうなやつを追加していく">適宜、よく使いそうなやつを追加していく</h4>
+
+<p>pod yaml manifest template (sample-pod.yaml)</p>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata: 
+	name: sample-pod 
+	spec: 
+		containers: 
+			- name: nginx-container 
+				image: nginx: 1.12
+</code></pre>
+
+<pre><code class="language-bash"># get pod info
+$ kubectl get pods
+
+# create pod
+$ kubectl create -f sample-pod.yaml
+
+# delete pod
+$ kubectl delete -f sample-pod.yaml
+
+# delete pod force =&gt; --grace-periodは後で
+$ kubectl delete -f sample-pod.yaml --grace-period 0 --force
+
+# update pod | changed ` pod &quot;sample-pod&quot; configured ` | unchanged ` pod &quot;sample-pod&quot; unchanged ` | not found `pod &quot;sample-pod&quot; created`
+# kubectl applyで存在しないpod指定すると作られちゃう
+$ kubectl apply -f sample-pod.yaml
+
+# 指定したpodが利用しているイメージを見る
+$ kubectl get pods sample-pod -o jsonpath=&quot;{.spec.containers[].image}&quot;
+</code></pre>
+
+<h3 id="複数のリソースを1つのmanifestにまとめるとよいパターン">複数のリソースを1つのManifestにまとめるとよいパターン</h3>
+
+<ul>
+<li>一連の作業の実行順序を厳密にしたい場合</li>
+<li>リソース感の結合度が強い場合</li>
+</ul>
+
+<h3 id="リソースの記述をmanifestで分けたほうがいいパターン">リソースの記述をManifestで分けたほうがいいパターン</h3>
+
+<ul>
+<li>ConfigMap Resource (共通の設定)</li>
+<li>Secret Resource (パスワード)</li>
+</ul>
+
+<h3 id="manifest-マメポイント">Manifest マメポイント</h3>
+
+<ul>
+<li>複数リソースをまとめて書くと、<code>$ kubectl apply</code> したとき上から読みに行き、上がこけるとしたを実行しない</li>
+<li>リソースとリソースの境界は &ldquo;&mdash;&rdquo; で区切る</li>
+<li>再帰的に複数のマニフェストを同時適用する <code>$ kubectl apply -f ./ -R</code></li>
+</ul>
 
     </div>
     <div class="post-footer">
