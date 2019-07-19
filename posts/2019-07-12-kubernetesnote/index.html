@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <title>Kubernetesノート // Nakad Blog</title>
+    <title>EKS (Kubernetes) Note // Nakad Blog</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.56.0-DEV" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,8 +11,8 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kubernetesノート"/>
-<meta name="twitter:description" content="定期的にアップデートしていきます Kubernetes_検証してみる [Words]Kubernetes リソース  Workload
+<meta name="twitter:title" content="EKS (Kubernetes) Note"/>
+<meta name="twitter:description" content="定期的にアップデートしていきます EKS (Kubernetes) Note [Words]Kubernetes リソース  Workload
 コンテナ実行に関するリソース Discovery &amp; LB
 コンテナの外部公開などエンドポイントを提供 Config &amp; Storage
 設定、機密情報、永続化ボリューム Cluster
@@ -20,12 +20,10 @@
 クラスタ内の他のリソースを操作するためのリソース  Workload  Pod ReplicationController ReplicaSet Deployment DaemonSet Job CronJob  Discovery &amp; LB  Service  ClusterIP ExternalIP（ ClusterIP の 一種） NodePort LoadBalancer Headless（ None） ExternalName None-Selector  Ingress  Config &amp; Storage  Secret ConfigMap PersistentVolumeClaim  Cluster  Node
  Namespace
   仮想的なクラスタの分離機能(完全ではない)
-1つのKubeternetesくらすたを複数チームで利用したり、プロダクション/ステージング/開発で分割できる
-デフォルトでは以下
- kube-system"/>
+1つのKubeternetesくらすたを複数チームで利用したり、プロダクション/ステージング/開発で分割できる"/>
 
-    <meta property="og:title" content="Kubernetesノート" />
-<meta property="og:description" content="定期的にアップデートしていきます Kubernetes_検証してみる [Words]Kubernetes リソース  Workload
+    <meta property="og:title" content="EKS (Kubernetes) Note" />
+<meta property="og:description" content="定期的にアップデートしていきます EKS (Kubernetes) Note [Words]Kubernetes リソース  Workload
 コンテナ実行に関するリソース Discovery &amp; LB
 コンテナの外部公開などエンドポイントを提供 Config &amp; Storage
 設定、機密情報、永続化ボリューム Cluster
@@ -33,9 +31,7 @@
 クラスタ内の他のリソースを操作するためのリソース  Workload  Pod ReplicationController ReplicaSet Deployment DaemonSet Job CronJob  Discovery &amp; LB  Service  ClusterIP ExternalIP（ ClusterIP の 一種） NodePort LoadBalancer Headless（ None） ExternalName None-Selector  Ingress  Config &amp; Storage  Secret ConfigMap PersistentVolumeClaim  Cluster  Node
  Namespace
   仮想的なクラスタの分離機能(完全ではない)
-1つのKubeternetesくらすたを複数チームで利用したり、プロダクション/ステージング/開発で分割できる
-デフォルトでは以下
- kube-system" />
+1つのKubeternetesくらすたを複数チームで利用したり、プロダクション/ステージング/開発で分割できる" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nakadeng.github.io/nakadeng/posts/2019-07-12-kubernetesnote/" />
 <meta property="article:published_time" content="2019-07-12T11:22:35&#43;09:00"/>
@@ -66,7 +62,7 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Kubernetesノート</h1>
+      <h1 class ="post-title">EKS (Kubernetes) Note</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -93,7 +89,7 @@
 
 <h3 id="定期的にアップデートしていきます">定期的にアップデートしていきます</h3>
 
-<h1 id="kubernetes-検証してみる">Kubernetes_検証してみる</h1>
+<h1 id="eks-kubernetes-note">EKS (Kubernetes) Note</h1>
 
 <h2 id="words-kubernetes-リソース">[Words]Kubernetes リソース</h2>
 
@@ -315,6 +311,12 @@ $ kubectl apply -f sample-pod.yaml
 
 # 指定したpodが利用しているイメージを見る
 $ kubectl get pods sample-pod -o jsonpath=&quot;{.spec.containers[].image}&quot;
+
+# deploymentのマニフェストを更新する
+$ kubectl edit deployment php-apache
+
+# get log
+$ kubectl logs -f deployment/cluster-autoscaler
 </code></pre>
 
 <h3 id="複数のリソースを1つのmanifestにまとめるとよいパターン">複数のリソースを1つのManifestにまとめるとよいパターン</h3>
@@ -338,6 +340,35 @@ $ kubectl get pods sample-pod -o jsonpath=&quot;{.spec.containers[].image}&quot;
 <li>リソースとリソースの境界は &ldquo;&mdash;&rdquo; で区切る</li>
 <li>再帰的に複数のマニフェストを同時適用する <code>$ kubectl apply -f ./ -R</code></li>
 </ul>
+
+<h2 id="horizontal-pod-autoscaling">Horizontal Pod Autoscaling</h2>
+
+<p><em>PodのCPU負荷などのメトリクスを見てDeploymentに命令を送り、Replicasを増減させる</em></p>
+
+<p>Kubernetes Metrics ServerをHelmからインストールして使う</p>
+
+<h4 id="メトリクス一覧">メトリクス一覧</h4>
+
+<ul>
+<li>Resource
+CPU/Memoryリソース</li>
+<li>Object
+Kubernetes Object Metrics (?) (ex. Ingress_hits/s)</li>
+<li>Pods
+Pod Metrics (Pod Connectionsなど)</li>
+<li>External
+Kubernetes外のメトリクス (?) (ex. LBのQPS､Cloud Pub/Subの溜まっているメッセージ数)</li>
+</ul>
+
+<h2 id="cluster-autoscaler">Cluster Autoscaler</h2>
+
+<p><em>WorkerNodesのAutoscalingをする機能</em></p>
+
+<p>NodeのCPU Utilじゃなく、PendingのPodを検知してスケールアウトする</p>
+
+<p>つまり、CAがPodのリソース不足を検知して、Amazon EC2 Auto Scalingを動かすことでNodeを追加する</p>
+
+<p>(Autoscalingに触るためのポリシーが必要ということ)</p>
 
     </div>
     <div class="post-footer">
