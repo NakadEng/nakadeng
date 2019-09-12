@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on Nakad Blog</title>
-    <link>https://nakadeng.github.io/nakadeng/tags/blog/</link>
-    <description>Recent content in blog on Nakad Blog</description>
+    <title>isucon on Nakad Blog</title>
+    <link>https://nakadeng.github.io/nakadeng/tags/isucon/</link>
+    <description>Recent content in isucon on Nakad Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 12 Sep 2019 11:49:06 +0900</lastBuildDate>
     
-	<atom:link href="https://nakadeng.github.io/nakadeng/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nakadeng.github.io/nakadeng/tags/isucon/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -38,27 +38,6 @@ ISUCON 1日目 第二試合 環境構築の部 10:00 なんかよく分からん
 意外とここはスムーズに終わり、node.js実装に切り替え、問題なくベンチマークも動いたので余裕な顔を見せていましたが、本題で詰み始めます。
 13:00 kataribeを導入し、スローリクエストは絞り込めた。どうやら&amp;hellip; /sell重すぎるでしょ・・・
 TOP 37 Slow Requests 1 37.665 POST /sell HTTP/1.1 2 37.284 POST /sell HTTP/1.</description>
-    </item>
-    
-    <item>
-      <title>Powershell製Webフレームワーク「Polaris」を試した (前編)</title>
-      <link>https://nakadeng.github.io/nakadeng/posts/2019-05-31/</link>
-      <pubDate>Fri, 31 May 2019 15:45:34 +0900</pubDate>
-      
-      <guid>https://nakadeng.github.io/nakadeng/posts/2019-05-31/</guid>
-      <description>僕が一番書き慣れているのがPowershellなので試してみたかった 参考資料 Github https://github.com/PowerShell/Polaris
-Qiita Article (SUGOI WAKARIYASUI!!) https://qiita.com/nimzo6689/items/502262bd5eb1bc8ea4a1
-試した軌跡 環境 -&amp;gt; Polaris on Amazon Linux2 Amazon Linux2 に Powershellをインストールしてその上でPolarisを実行します。
- Infra  AWS EC2  OS  Amazon Linux2   Command # install powershell $ curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo $ sudo yum install -y powershell # start powershell $ pwsh # show powershell version PS /home/ec2-user&amp;gt; $PSVersionTable Name Value ---- ----- PSVersion 6.2.1 PSEdition Core GitCommitId 6.</description>
-    </item>
-    
-    <item>
-      <title>Created a New Blog</title>
-      <link>https://nakadeng.github.io/nakadeng/posts/2019-05-15/</link>
-      <pubDate>Tue, 14 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://nakadeng.github.io/nakadeng/posts/2019-05-15/</guid>
-      <description> Introduction Static Site GeneratorでMarkdownで書けるBlogを作った  Client  Ubuntu:Windows Subsystem for Linux(Windows10)  Static Site Generator  Hugo v0.56.0/go1.11   </description>
     </item>
     
   </channel>
