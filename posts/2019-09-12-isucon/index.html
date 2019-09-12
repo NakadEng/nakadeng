@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title> // Nakad Blog</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.56.0-DEV" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Daisuke Nakata" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://nakadeng.github.io/nakadeng/css/main.min.f90f5edd436ec7b74ad05479a05705770306911f721193e7845948fb07fe1335.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="ISUCON9に初参加して予選敗退しました はじめに 筆者はWeb系のエンジニアではないため、技術的に参考になることは特にないと思います。
+技術的な参考は素直に公式の参考実装や予選通過した人のBlogを読んだほうがいいです。
+ぼくについて &gt;&gt;こういう人です
+&gt;&gt;Twitterはここ
+どんなチームだったか チーム KIDS(くされ縁)
+RaimuEr
+👉Railsの鬼
+👉今回はバックエンドのアプリ見てもらおうと思った(他力本願)
+キリンさん
+👉高いインフラ屋さんスキル
+👉困ったときにプロに助けてもらおうと思った(他力本願)
+キリンさんのISUCON9 Blogはこちら
+当日までにやったこと  ISUCON7、8の環境で過去問題をやってみる  ISUCON7は個人で環境置いて、他の人の解法とかを参考にしながらいじいじした ISUCON8はオフラインで集まってコワーキングスペースでやってみたりした べったり張り付いたが、現状把握でほとんど終わってしまった  当日、サーバを渡されてからInitでやることを一覧化しておく  useradd、SSH、sudoers、デフォルトエディタまわり ツールを入れる vim/git/htop/dstat/kataribe   ISUCON 1日目 第一試合 起床の部 絶対遅刻したくなくて爆速で寝て深夜に起きたので実質 無敵 でしたね。この時点で予選通過したようなもんです。
+このTシャツを着ていきました
+ISUCON 1日目 第二試合 環境構築の部 10:00 なんかよく分からんがAlibaba Cloudの仕様でインスタンス立てられなくなって40分くらい口をあけてぼーっとしていた。
+暇だったので最近はまってる日本語ラッププレイリスト(2時間)を延々と布教していた。
+どうやらテスト用のイメージが残っていたらしく、作り直したらコンソールからアラートが出てインスタンス作れなくなったっぽい。`
+11:00 運営側から手を入れてもらってようやく環境構築ができるようになって、おおよそ1時間半くらいかけて環境整備をして、今後の進め方を話し合う。
+意外とここはスムーズに終わり、node.js実装に切り替え、問題なくベンチマークも動いたので余裕な顔を見せていましたが、本題で詰み始めます。
+13:00 kataribeを導入し、スローリクエストは絞り込めた。どうやら
+TOP 37 Slow Requests 1 37.665 POST /sell HTTP/1.1 2 37.284 POST /sell HTTP/1.1 3 36."/>
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="ISUCON9に初参加して予選敗退しました はじめに 筆者はWeb系のエンジニアではないため、技術的に参考になることは特にないと思います。
+技術的な参考は素直に公式の参考実装や予選通過した人のBlogを読んだほうがいいです。
+ぼくについて &gt;&gt;こういう人です
+&gt;&gt;Twitterはここ
+どんなチームだったか チーム KIDS(くされ縁)
+RaimuEr
+👉Railsの鬼
+👉今回はバックエンドのアプリ見てもらおうと思った(他力本願)
+キリンさん
+👉高いインフラ屋さんスキル
+👉困ったときにプロに助けてもらおうと思った(他力本願)
+キリンさんのISUCON9 Blogはこちら
+当日までにやったこと  ISUCON7、8の環境で過去問題をやってみる  ISUCON7は個人で環境置いて、他の人の解法とかを参考にしながらいじいじした ISUCON8はオフラインで集まってコワーキングスペースでやってみたりした べったり張り付いたが、現状把握でほとんど終わってしまった  当日、サーバを渡されてからInitでやることを一覧化しておく  useradd、SSH、sudoers、デフォルトエディタまわり ツールを入れる vim/git/htop/dstat/kataribe   ISUCON 1日目 第一試合 起床の部 絶対遅刻したくなくて爆速で寝て深夜に起きたので実質 無敵 でしたね。この時点で予選通過したようなもんです。
+このTシャツを着ていきました
+ISUCON 1日目 第二試合 環境構築の部 10:00 なんかよく分からんがAlibaba Cloudの仕様でインスタンス立てられなくなって40分くらい口をあけてぼーっとしていた。
+暇だったので最近はまってる日本語ラッププレイリスト(2時間)を延々と布教していた。
+どうやらテスト用のイメージが残っていたらしく、作り直したらコンソールからアラートが出てインスタンス作れなくなったっぽい。`
+11:00 運営側から手を入れてもらってようやく環境構築ができるようになって、おおよそ1時間半くらいかけて環境整備をして、今後の進め方を話し合う。
+意外とここはスムーズに終わり、node.js実装に切り替え、問題なくベンチマークも動いたので余裕な顔を見せていましたが、本題で詰み始めます。
+13:00 kataribeを導入し、スローリクエストは絞り込めた。どうやら
+TOP 37 Slow Requests 1 37.665 POST /sell HTTP/1.1 2 37.284 POST /sell HTTP/1.1 3 36." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nakadeng.github.io/nakadeng/posts/2019-09-12-isucon/" />
+<meta property="article:published_time" content="2019-09-12T11:49:06&#43;09:00"/>
+<meta property="article:modified_time" content="2019-09-12T11:49:06&#43;09:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://nakadeng.github.io/nakadeng/"><img class="app-header-avatar" src="/nakadeng/avatar.jpg" alt="Daisuke Nakata" /></a>
+      <h1>Nakad Blog</h1>
+      <p>I like video game and computer</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/NakadEng"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://twitter.com/NakadEngineer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"></h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Sep 12, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h1 id="isucon9に初参加して予選敗退しました">ISUCON9に初参加して予選敗退しました</h1>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><code>筆者はWeb系のエンジニアではないため、技術的に参考になることは特にないと思います。</code><br />
+<code>技術的な参考は素直に公式の参考実装や予選通過した人のBlogを読んだほうがいいです。</code></p>
+
+<h2 id="ぼくについて">ぼくについて</h2>
+
+<p><a href="https://nakadeng.github.io/nakadeng/pages/about/">&gt;&gt;こういう人です</a><br />
+<a href="https://twitter.com/NakadEngineer">&gt;&gt;Twitterはここ</a></p>
+
+<h2 id="どんなチームだったか">どんなチームだったか</h2>
+
+<p>チーム KIDS(くされ縁)<br />
+<a href="https://twitter.com/RaimuErt">RaimuEr</a><br />
+👉<code>Railsの鬼</code><br />
+👉<code>今回はバックエンドのアプリ見てもらおうと思った(他力本願)</code></p>
+
+<p><a href="https://twitter.com/kill_in_sun">キリンさん</a><br />
+👉<code>高いインフラ屋さんスキル</code><br />
+👉<code>困ったときにプロに助けてもらおうと思った(他力本願)</code><br />
+<a href="https://blog.killinsun.com/?p=483">キリンさんのISUCON9 Blogはこちら</a></p>
+
+<h2 id="当日までにやったこと">当日までにやったこと</h2>
+
+<ul>
+<li>ISUCON7、8の環境で過去問題をやってみる
+
+<ul>
+<li>ISUCON7は個人で環境置いて、他の人の解法とかを参考にしながらいじいじした</li>
+<li>ISUCON8はオフラインで集まってコワーキングスペースでやってみたりした</li>
+<li>べったり張り付いたが、現状把握でほとんど終わってしまった</li>
+</ul></li>
+<li>当日、サーバを渡されてからInitでやることを一覧化しておく
+
+<ul>
+<li>useradd、SSH、sudoers、デフォルトエディタまわり</li>
+<li>ツールを入れる</li>
+<li>vim/git/htop/dstat/kataribe</li>
+</ul></li>
+</ul>
+
+<h2 id="isucon-1日目-第一試合-起床の部">ISUCON 1日目 第一試合 起床の部</h2>
+
+<p>絶対遅刻したくなくて爆速で寝て深夜に起きたので実質 <strong>無敵</strong> でしたね。この時点で予選通過したようなもんです。<br />
+<a href="https://minne.com/items/18518597">このTシャツを着ていきました</a></p>
+
+<h2 id="isucon-1日目-第二試合-環境構築の部">ISUCON 1日目 第二試合 環境構築の部</h2>
+
+<h3 id="10-00"><code>10:00</code></h3>
+
+<p>なんかよく分からんがAlibaba Cloudの仕様でインスタンス立てられなくなって40分くらい口をあけてぼーっとしていた。<br />
+<code>暇だったので最近はまってる日本語ラッププレイリスト(2時間)を延々と布教していた。</code><br />
+どうやらテスト用のイメージが残っていたらしく、作り直したらコンソールからアラートが出てインスタンス作れなくなったっぽい。`</p>
+
+<h3 id="11-00"><code>11:00</code></h3>
+
+<p>運営側から手を入れてもらってようやく環境構築ができるようになって、おおよそ1時間半くらいかけて環境整備をして、今後の進め方を話し合う。<br />
+意外とここはスムーズに終わり、node.js実装に切り替え、問題なくベンチマークも動いたので余裕な顔を見せていましたが、本題で詰み始めます。</p>
+
+<h3 id="13-00"><code>13:00</code></h3>
+
+<p>kataribeを導入し、スローリクエストは絞り込めた。どうやら</p>
+
+<pre><code>TOP 37 Slow Requests
+ 1  37.665  POST /sell HTTP/1.1
+ 2  37.284  POST /sell HTTP/1.1
+ 3  36.125  POST /sell HTTP/1.1
+ 4  30.035  POST /sell HTTP/1.1
+ 5  29.720  POST /sell HTTP/1.1
+ 6  21.115  POST /sell HTTP/1.1
+ 7  20.718  POST /sell HTTP/1.1
+</code></pre>
+
+<p><code>/sell重すぎるでしょ・・・</code>ということで @Raimu 先生はその辺に当たりをつけて実装を読むことに。<br />
+その時間で僕とキリンさんは静的ファイルキャッシュとプロセス分離をもくもくとやっていました。
+<del>このときHTTP/1.1であることに特に気が付かず</del></p>
+
+<p><strong>いろいろ試してみるも、スコアは一向に伸びず、焦り始める</strong></p>
+
+<h3 id="15-30"><code>15:30</code></h3>
+
+<p><strong>redis入れてみっか！</strong>ととりあえず何でも試す感じになる、たぶんそういうフェーズ</p>
+
+<h3 id="17-00"><code>17:00</code></h3>
+
+<p>最終的にはMySQLだけサーバで切り出すことに。
+nginxとMySQLの負荷がとんでもなかった分、スコア上がると期待するも、変わらず・・・。</p>
+
+<h3 id="18-00"><code>18:00</code></h3>
+
+<p><strong>終</strong></p>
+
+<h2 id="isucon-1日目-感想戦">ISUCON 1日目 感想戦</h2>
+
+<p>3人で他の人の回答例を聴きながら、「あ～～～」「ふ～～～ん」「なるほどな(分かってない)」と言うなどした。<br />
+<code>正直ここが一番楽しかった</code></p>
+
+<h2 id="でかい反省">でかい反省</h2>
+
+<ul>
+<li>基本的な構成だったのにカーネルパラメータチューニングが雑だった</li>
+<li>サーバよりコードを読む人を増やそう
+
+<ul>
+<li>午前中にすべて終わらせて午後からはみんなでコードを読んだほうがいい</li>
+</ul></li>
+<li>マニュアルは最初から最後までちゃんと読もう
+
+<ul>
+<li>説明書を読まないタイプはこういう時に痛い目にあいます</li>
+</ul></li>
+</ul>
+
+<h2 id="有効だったこと">有効だったこと</h2>
+
+<ul>
+<li>Kataribeを使う
+
+<ul>
+<li>/var/log/nginx/をくわせるとスローリクエストが一覧で表示されるので、めっちゃ有能</li>
+</ul></li>
+<li>壁打ちする
+
+<ul>
+<li>誰かが手詰まりしてるときに壁打ち役になってとにかく話す(話してもらう)と意外と気が付いてすぐ解決したりするので、脳をマリガンする魔法か何かだと思っている</li>
+</ul></li>
+<li>時間を決める
+
+<ul>
+<li>〇〇時までは〇〇をやるって決めておくと、8時間耐久レースも全然時間が足りなく感じてくるほど中身がつまったような気がする</li>
+</ul></li>
+</ul>
+
+    </div>
+    <div class="post-footer">
+      <div class="addthis_inline_share_toolbox"></div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cf0f0b2b6001949" async></script>
+​<script type="text/javascript">
+    var addthis_config = addthis_config||{};
+    addthis_config.data_track_addressbar = false;
+    addthis_config.data_track_clickback = false;
+</script>
+      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cf0f0b2b6001949" async></script>
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

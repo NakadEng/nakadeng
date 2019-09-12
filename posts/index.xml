@@ -6,10 +6,39 @@
     <description>Recent content in Posts on Nakad Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 12 Jul 2019 11:22:35 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 11:49:06 +0900</lastBuildDate>
     
 	<atom:link href="https://nakadeng.github.io/nakadeng/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>https://nakadeng.github.io/nakadeng/posts/2019-09-12-isucon/</link>
+      <pubDate>Thu, 12 Sep 2019 11:49:06 +0900</pubDate>
+      
+      <guid>https://nakadeng.github.io/nakadeng/posts/2019-09-12-isucon/</guid>
+      <description>ISUCON9に初参加して予選敗退しました はじめに 筆者はWeb系のエンジニアではないため、技術的に参考になることは特にないと思います。
+技術的な参考は素直に公式の参考実装や予選通過した人のBlogを読んだほうがいいです。
+ぼくについて &amp;gt;&amp;gt;こういう人です
+&amp;gt;&amp;gt;Twitterはここ
+どんなチームだったか チーム KIDS(くされ縁)
+RaimuEr
+👉Railsの鬼
+👉今回はバックエンドのアプリ見てもらおうと思った(他力本願)
+キリンさん
+👉高いインフラ屋さんスキル
+👉困ったときにプロに助けてもらおうと思った(他力本願)
+キリンさんのISUCON9 Blogはこちら
+当日までにやったこと  ISUCON7、8の環境で過去問題をやってみる  ISUCON7は個人で環境置いて、他の人の解法とかを参考にしながらいじいじした ISUCON8はオフラインで集まってコワーキングスペースでやってみたりした べったり張り付いたが、現状把握でほとんど終わってしまった  当日、サーバを渡されてからInitでやることを一覧化しておく  useradd、SSH、sudoers、デフォルトエディタまわり ツールを入れる vim/git/htop/dstat/kataribe   ISUCON 1日目 第一試合 起床の部 絶対遅刻したくなくて爆速で寝て深夜に起きたので実質 無敵 でしたね。この時点で予選通過したようなもんです。
+このTシャツを着ていきました
+ISUCON 1日目 第二試合 環境構築の部 10:00 なんかよく分からんがAlibaba Cloudの仕様でインスタンス立てられなくなって40分くらい口をあけてぼーっとしていた。
+暇だったので最近はまってる日本語ラッププレイリスト(2時間)を延々と布教していた。
+どうやらテスト用のイメージが残っていたらしく、作り直したらコンソールからアラートが出てインスタンス作れなくなったっぽい。`
+11:00 運営側から手を入れてもらってようやく環境構築ができるようになって、おおよそ1時間半くらいかけて環境整備をして、今後の進め方を話し合う。
+意外とここはスムーズに終わり、node.js実装に切り替え、問題なくベンチマークも動いたので余裕な顔を見せていましたが、本題で詰み始めます。
+13:00 kataribeを導入し、スローリクエストは絞り込めた。どうやら
+TOP 37 Slow Requests 1 37.665 POST /sell HTTP/1.1 2 37.284 POST /sell HTTP/1.1 3 36.</description>
+    </item>
     
     <item>
       <title>EKS (Kubernetes) Note</title>
